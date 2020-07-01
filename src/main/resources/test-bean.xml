@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="appContextProvider" class="spring.test.AppContextProvider"/>
+
+    <bean id="testMessage" class="spring.test.TestMessage" scope="prototype">
+        <property name="message" value="Hello from Bean"/>
+    </bean>
+
+    <bean id="testData" class="spring.test.TestData">
+        <constructor-arg>
+            <value>Тестовое сообщение для лабы</value>
+        </constructor-arg>
+    </bean>
+
+    <bean id="complexBean" class="spring.test.ComplexBean" autowire="byName"/>
+    <bean id="complexBean2" class="spring.test.ComplexBean" autowire="byName"/>
+    <bean id="complexBean3" class="spring.test.ComplexBean" autowire="byName"/>
+
+</beans>
